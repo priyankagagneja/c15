@@ -28,8 +28,7 @@ uv venv
 
 ## 1. Get data    
 
-Data available [here](https://github.com/reubenfirmin/interview
-data/blob/master/weather.data) is downloaded and parsed as:
+Data available [here](https://github.com/reubenfirmin/interview_data/blob/master/weather.data) is downloaded and parsed as:
 
 ```bash
 uv run 01_get_data.py 
@@ -57,7 +56,9 @@ This report helps better understand the data pretty quickly and also identify po
 
 ## 3. Weather Data Pipeline
 
-A Python data pipeline that loads weather data from CSV into a normalized SQLite database and provides geocoding functionality for weather stations.
+Implementation of data pipeline that 
+- loads the data from CSV into a normalized SQLite database and 
+- provides geocoding functionality for weather stations.
 
 
 ### Database Schema
@@ -89,7 +90,7 @@ The normalized database schema consists of:
 **Run the pipeline**
 
 ```bash
-python pipeline.py
+uv run 03_create_db_pipeline.py
 ```
 
 ### Customization
