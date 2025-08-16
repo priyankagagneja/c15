@@ -150,7 +150,7 @@ class WeatherPipeline:
         state_mapping = get_state_codes_from_csv(CSV_FILE)
         
         # Process and insert data
-        print("Processing states...")
+        print("Processing states")
         inserted_codes = set()  # Track codes we've already inserted
             
         for state_name in tqdm(df['state'].unique()):
@@ -189,7 +189,7 @@ class WeatherPipeline:
         # Commit states
         session.commit()
         
-        print("Processing stations...")
+        print("Processing stations")
         # Track stations by their code and state_code for later use with weather records
         stations_map = {}
             
@@ -218,7 +218,7 @@ class WeatherPipeline:
         # Commit stations
         session.commit()
         
-        print("Processing weather records...")
+        print("Processing weather records")
         # Convert date_full to datetime objects
         df['date'] = pd.to_datetime(df['date_full'])
         
@@ -261,7 +261,7 @@ class WeatherPipeline:
         Args:
             state_name (str): Name of the state to geocode stations for.
         """
-        print(f"Geocoding stations in {state_name}...")
+        print(f"Geocoding stations in {state_name}")
         session = self.Session()
         
         try:

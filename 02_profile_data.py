@@ -1,3 +1,11 @@
+"""
+Understanding and profiling data
+
+This script looks at basic descriptive information about the rows and columns 
+first using pandas and then presents more details for each column as well as bivariate analysis using 
+YDataProfiling to provide a more comprehensive report
+"""
+
 import pandas as pd
 
 CSV_FILE = "data/weather_parsed.csv"

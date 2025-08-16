@@ -1,9 +1,16 @@
+"""
+Reading and parsing data
+
+This script reads and parses the data from a pickle file and saves 
+it as a CSV file
+"""
 
 import pickle, csv      
-# these are all part of python 3.11 standard library, dont need to be installed (thus exclude from .toml). 
-# Only load them with import statements
+# These libraries are part of python 3.11 standard library, 
+# so they dont need to be installed (thus exclude from .toml). 
+# Only load them win them in the environment.
 
-# import utils
+# import from the script utils.py
 from utils import flatten_row
 
 INPUT_PATH = "data/weather.data"
@@ -41,10 +48,12 @@ with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as f:
     w.writeheader()
     for item in iterable:
         try:
-            rec = flatten_row(item)
+            rec = flatten_row(item)       # flatten_row() from utils.py
+
             # Write the row even if some fields are None; zeros (0) are preserved.
             w.writerow({k: ("" if rec[k] is None else rec[k]) for k in fields})
             rows_written += 1
+
         except Exception:
             skipped += 1
 
