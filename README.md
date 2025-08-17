@@ -9,9 +9,9 @@
 
 ### Project Structure
 
-- `01_get_data.py`: script - reads binary data and converts to csv
-- `02_profile_data.py`: script - profiles to better understand the data
-- `03_create_db_pipeline.py`: script - implements data pipeline and geocodes for _Alabama_
+- `get_data.py`: script - reads binary data and converts to csv
+- `profile_data.py`: script - profiles to better understand the data
+- `create_db_pipeline.py`: script - implements data pipeline and geocodes for _Alabama_
 - `weather_parsed.csv`: data - Input weather data
 - `weather_data.db`: data - Output SQLite database (created when running the pipeline)
 
@@ -31,7 +31,7 @@ uv venv
 Data available [here](https://github.com/reubenfirmin/interview_data/blob/master/weather.data) is downloaded and parsed as:
 
 ```bash
-uv run 01_get_data.py 
+uv run src/get_data.py 
 ```
 
 ## 2. Understand Data (Profiling)
@@ -39,7 +39,7 @@ uv run 01_get_data.py
 I have used both pandas and ydata-profiling packages to understand the nuances of the data.
 
 ```bash
-uv run 02_profile_data.py
+uv run src/profile_data.py
 ```
 
 Output contains 
@@ -90,7 +90,7 @@ The normalized database schema consists of:
 **Run the pipeline**
 
 ```bash
-uv run 03_create_db_pipeline.py
+uv run src/create_db_pipeline.py
 ```
 
 ### Customization
@@ -105,4 +105,4 @@ Next, I am looking to add:
 - modeling script,
 - visualization scripts,
 
-and potentially move the main scripts into and `src` folder and add `validation` folder for validation scripts (which have been written but not been added to github yet)
+and potentially add `validation` folder for validation scripts (which have been written but not been added to github yet)

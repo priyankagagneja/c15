@@ -11,7 +11,7 @@ import pickle, csv
 # Only load them win them in the environment.
 
 # import from the script utils.py
-from utils import flatten_row
+from src.utils import flatten_row
 
 INPUT_PATH = "data/weather.data"
 OUTPUT_CSV = "data/weather_parsed.csv"
