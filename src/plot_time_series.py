@@ -31,6 +31,7 @@ def plot_ts(station_code, y_col):
     df = get_station_data(station_code, y_col)
 
     col_nm = y_col.replace('_', ' ').title()
+
     if df.empty:
         print(f"No data found for station: {station_code}")
     else:

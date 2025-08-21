@@ -12,6 +12,7 @@
 - `get_data.py`: script - reads binary data and converts to csv
 - `profile_data.py`: script - profiles to better understand the data
 - `create_db_pipeline.py`: script - implements data pipeline and geocodes for _Alabama_
+- `plot_time_series.py`: script - plots individual variable for a station, taking user inputs
 - `weather_parsed.csv`: data - Input weather data
 - `weather_data.db`: data - Output SQLite database (created when running the pipeline)
 
@@ -99,10 +100,29 @@ uv run src/create_db_pipeline.py
 - To geocode stations in a different state, modify the `main()` function in `pipeline.py`.
 
 
+
+## 4. Visualising time series patterns 
+
+   Potential values for 
+   - station_code = HSV, MOB, BHM, MGM # Huntsville, Mobile, Birmingham,Montgomery stations in AL
+   - y_col = avg_temp, precipitation, avg_temp, max_temp, min_temp, wind_direction, wind_speed
+
+```bash
+uv run src/plot_time_series.py MOB precipitation
+```
+
+## Validation scripts 
+
+**To view the database**
+
+```bash
+uv run validation/validate_database.py
+```
+**To check geocoding**
+```bash
+uv run validation/validate_geocoded_data.py
+```
+
 ## Next Steps
 
-Next, I am looking to add:
-- modeling script,
-- visualization scripts,
-
-and potentially add `validation` folder for validation scripts (which have been written but not been added to github yet)
+If I had more time at hand I would also attempt at doing modeling but skipping it for lack of time at hand.
