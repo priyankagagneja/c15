@@ -15,4 +15,5 @@ dependencies = [
     "matplotlib==3.7.2",
     "tabulate",
     "ydata-profiling>=4.15.1",
+    "plotly",
 ]
